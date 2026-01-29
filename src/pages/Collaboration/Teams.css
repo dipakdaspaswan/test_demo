@@ -1,0 +1,317 @@
+.teams-page {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    color: #fff !important;
+    margin-bottom: 8px !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-icon {
+    font-size: 28px !important;
+    color: #6366f1;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Stats Row */
+.stats-row {
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+}
+
+.stat-card .ant-card-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px !important;
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Search Section */
+.search-section {
+    margin-bottom: 24px;
+}
+
+.team-search {
+    max-width: 400px;
+}
+
+.team-search .ant-input-affix-wrapper {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px;
+}
+
+.team-search .ant-input {
+    background: transparent !important;
+    color: #fff !important;
+}
+
+.team-search .ant-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.team-search .ant-input-prefix {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+}
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.team-card.selected {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.team-card .ant-card-body {
+    padding: 20px !important;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.team-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.team-description {
+    margin-bottom: 16px !important;
+    min-height: 44px;
+}
+
+.team-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.team-members {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.team-lead {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.team-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.team-actions .ant-btn {
+    flex: 1;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.team-actions .ant-btn:hover {
+    color: #818cf8 !important;
+    background: rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Activity Card */
+.activity-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    margin-bottom: 24px;
+}
+
+.activity-card .ant-card-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.activity-card .ant-card-head-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.activity-item {
+    padding: 12px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.activity-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Detail Card */
+.detail-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+}
+
+.detail-card .ant-card-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-card .ant-card-head-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.detail-content {
+    text-align: center;
+}
+
+.detail-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.detail-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Modal Styling */
+.teams-modal .ant-modal-content {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+.teams-modal .ant-modal-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teams-modal .ant-modal-title {
+    color: #fff;
+}
+
+.teams-modal .ant-modal-close-x {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.teams-modal .ant-form-item-label>label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.teams-modal .ant-input,
+.teams-modal .ant-select-selector {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+.teams-modal .ant-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.teams-modal .ant-select-selection-placeholder,
+.teams-modal .ant-select-selection-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.teams-modal .ant-modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .page-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+}

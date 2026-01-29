@@ -1,0 +1,69 @@
+.app-layout {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f172a 100%);
+}
+
+.main-layout {
+    min-height: 100vh;
+    transition: margin-left 0.2s ease;
+    background: transparent;
+}
+
+.main-content {
+    padding: 24px;
+    min-height: calc(100vh - 64px);
+    overflow-y: auto;
+    background: transparent;
+}
+
+/* Scrollbar styling */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+}
+
+/* Page transitions */
+.main-content>* {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .main-layout {
+        margin-left: 0 !important;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 12px;
+    }
+}

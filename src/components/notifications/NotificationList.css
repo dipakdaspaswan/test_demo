@@ -1,0 +1,128 @@
+.notification-list-page {
+    padding: 24px;
+}
+
+.notification-list-header {
+    margin-bottom: 24px;
+}
+
+.notification-list-header .gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.notification-list-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.notification-list-card .ant-card-body {
+    padding: 24px;
+}
+
+.notification-list-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.notification-list-toolbar .ant-input-affix-wrapper,
+.notification-list-toolbar .ant-select-selector {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+.notification-list-toolbar .ant-input,
+.notification-list-toolbar .ant-select-selection-item {
+    color: #fff !important;
+}
+
+.notification-list-toolbar .ant-input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.notification-tabs .ant-tabs-tab {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.notification-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #818cf8 !important;
+}
+
+.notification-tabs .ant-tabs-ink-bar {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.notification-table .ant-table {
+    background: transparent !important;
+}
+
+.notification-table .ant-table-thead>tr>th {
+    background: rgba(99, 102, 241, 0.1) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    font-weight: 600;
+}
+
+.notification-table .ant-table-tbody>tr>td {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.notification-table .ant-table-tbody>tr:hover>td {
+    background: rgba(99, 102, 241, 0.08) !important;
+}
+
+.notification-table .ant-table-tbody>tr.ant-table-row-selected>td {
+    background: rgba(99, 102, 241, 0.15) !important;
+}
+
+.notification-table .ant-pagination {
+    margin-top: 16px;
+}
+
+.notification-table .ant-pagination-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-table .ant-pagination-item a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.notification-table .ant-pagination-item-active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+}
+
+.notification-table .ant-pagination-item-active a {
+    color: #fff;
+}
+
+.notification-table .ant-select-selector {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.notification-table .ant-select-selection-item {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.notification-table .ant-pagination-options-quick-jumper input {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.notification-table .ant-empty-description {
+    color: rgba(255, 255, 255, 0.5);
+}
