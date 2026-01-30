@@ -1,4 +1,4 @@
-import { Layout, Input, Space, Button, Dropdown, Avatar, Typography } from 'antd';
+import { Layout, Input, Space, Button, Dropdown, Avatar, Typography, Tooltip } from 'antd';
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
@@ -7,14 +7,19 @@ import {
     UserOutlined,
     LogoutOutlined,
     QuestionCircleOutlined,
+    SunOutlined,
+    MoonOutlined,
 } from '@ant-design/icons';
 import NotificationBell from '../notifications/NotificationBell';
+import { useTheme } from '../../context/ThemeContext';
 import './HeaderBar.css';
 
 const { Header } = Layout;
 const { Text } = Typography;
 
 const HeaderBar = ({ collapsed, onToggle }) => {
+    const { isDark, toggleTheme } = useTheme();
+
     const userMenuItems = [
         {
             key: 'profile',
@@ -70,6 +75,16 @@ const HeaderBar = ({ collapsed, onToggle }) => {
 
             <div className="header-right">
                 <Space size="middle">
+                    {/* Theme Toggle Button */}
+                    <Tooltip title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
+                        <Button
+                            type="text"
+                            icon={isDark ? <SunOutlined /> : <MoonOutlined />}
+                            onClick={toggleTheme}
+                            className="theme-toggle-btn"
+                        />
+                    </Tooltip>
+
                     <NotificationBell />
 
                     <Dropdown

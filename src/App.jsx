@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ConfigProvider, theme } from 'antd';
 
+// Context
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+
 // Layout
 import AppLayout from './components/layout/AppLayout';
 
@@ -11,54 +14,70 @@ import Finance from './pages/Departments/Finance';
 import CustomerService from './pages/Departments/CustomerService';
 import IT from './pages/Departments/IT';
 import Forms from './pages/Workflow/Forms';
-import Teams from './pages/Collaboration/Teams';
+import MicrosoftTeams from './pages/Collaboration/MicrosoftTeams';
 import NotificationList from './components/notifications/NotificationList';
 
 // Styles
 import './App.css';
 
-function App() {
+// Theme configuration component
+const ThemedApp = () => {
+  const { isDark } = useTheme();
+
+  // Light theme tokens
+  const lightTheme = {
+    colorPrimary: '#5059C9',
+    colorBgContainer: '#ffffff',
+    colorBgElevated: '#ffffff',
+    colorBgLayout: '#f5f7fa',
+    borderRadius: 12,
+    colorBorder: '#e8e8e8',
+    colorText: '#1f2937',
+    colorTextSecondary: '#6b7280',
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  };
+
+  // Dark theme tokens
+  const darkTheme = {
+    colorPrimary: '#6366f1',
+    colorBgContainer: 'rgba(30, 30, 50, 0.95)',
+    colorBgElevated: 'rgba(30, 30, 50, 0.98)',
+    colorBgLayout: '#0f0f23',
+    borderRadius: 12,
+    colorBorder: 'rgba(255, 255, 255, 0.08)',
+    colorText: 'rgba(255, 255, 255, 0.85)',
+    colorTextSecondary: 'rgba(255, 255, 255, 0.6)',
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  };
+
   return (
     <ConfigProvider
       theme={{
-        algorithm: theme.darkAlgorithm,
-        token: {
-          colorPrimary: '#6366f1',
-          colorBgContainer: 'rgba(26, 26, 46, 0.9)',
-          colorBgElevated: 'rgba(26, 26, 46, 0.95)',
-          borderRadius: 12,
-          colorBorder: 'rgba(255, 255, 255, 0.08)',
-          colorText: 'rgba(255, 255, 255, 0.85)',
-          colorTextSecondary: 'rgba(255, 255, 255, 0.6)',
-          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-        },
+        algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        token: isDark ? darkTheme : lightTheme,
         components: {
           Button: {
             primaryColor: '#fff',
-            colorPrimary: '#6366f1',
-            colorPrimaryHover: '#818cf8',
+            colorPrimary: isDark ? '#6366f1' : '#5059C9',
+            colorPrimaryHover: isDark ? '#818cf8' : '#6366f1',
             borderRadius: 10,
           },
           Card: {
-            colorBgContainer: 'transparent',
+            colorBgContainer: isDark ? 'rgba(30, 30, 50, 0.9)' : '#ffffff',
           },
           Table: {
             colorBgContainer: 'transparent',
-            headerBg: 'rgba(99, 102, 241, 0.1)',
+            headerBg: isDark ? 'rgba(99, 102, 241, 0.1)' : 'rgba(80, 89, 201, 0.08)',
           },
           Menu: {
             darkItemBg: 'transparent',
             darkSubMenuItemBg: 'transparent',
           },
           Input: {
-            colorBgContainer: 'rgba(255, 255, 255, 0.05)',
+            colorBgContainer: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
           },
           Select: {
-            colorBgContainer: 'rgba(255, 255, 255, 0.05)',
-          },
-          Modal: {
-            contentBg: 'linear-gradient(145deg, #1a1a2e 0%, #16213e 100%)',
-            headerBg: 'transparent',
+            colorBgContainer: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
           },
         },
       }}
@@ -81,9 +100,9 @@ function App() {
               <Route path="forms" element={<Forms />} />
             </Route>
 
-            {/* Collaboration */}
+            {/* Collaboration - Microsoft Teams */}
             <Route path="collaboration">
-              <Route path="teams" element={<Teams />} />
+              <Route path="teams" element={<MicrosoftTeams />} />
             </Route>
 
             {/* Notifications */}
@@ -98,6 +117,14 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ConfigProvider>
+  );
+};
+
+function App() {
+  return (
+    <ThemeProvider>
+      <ThemedApp />
+    </ThemeProvider>
   );
 }
 

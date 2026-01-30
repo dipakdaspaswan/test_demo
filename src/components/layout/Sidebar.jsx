@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Layout, Menu, Typography } from 'antd';
+import { useState, useEffect } from 'react';
+import { Layout, Menu, Typography, Drawer, Grid } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
     DashboardOutlined,
@@ -13,15 +13,14 @@ import {
     SettingOutlined,
 } from '@ant-design/icons';
 import './Sidebar.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const { Sider } = Layout;
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
-const Sidebar = ({ collapsed, onCollapse }) => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [openKeys, setOpenKeys] = useState(['departments']);
-
+// Inner content component to be reused in both Sider (Desktop) and Drawer (Mobile)
+const SidebarContent = ({ collapsed, navigate, location, openKeys, setOpenKeys }) => {
     const menuItems = [
         {
             key: 'dashboard',
@@ -75,7 +74,7 @@ const Sidebar = ({ collapsed, onCollapse }) => {
                 {
                     key: 'teams',
                     icon: <TeamOutlined />,
-                    label: 'Teams',
+                    label: 'Microsoft Teams',
                 },
             ],
         },
@@ -111,7 +110,6 @@ const Sidebar = ({ collapsed, onCollapse }) => {
         setOpenKeys(keys);
     };
 
-    // Determine selected key from current path
     const getSelectedKey = () => {
         const path = location.pathname;
         if (path === '/') return 'dashboard';
@@ -126,16 +124,7 @@ const Sidebar = ({ collapsed, onCollapse }) => {
     };
 
     return (
-        <Sider
-            className="app-sidebar"
-            collapsible
-            collapsed={collapsed}
-            onCollapse={onCollapse}
-            breakpoint="lg"
-            collapsedWidth={80}
-            width={260}
-            trigger={null}
-        >
+        <>
             <div className="sidebar-header">
                 <div className="logo-container">
                     <div className="logo-icon">
@@ -152,7 +141,7 @@ const Sidebar = ({ collapsed, onCollapse }) => {
             <div className="sidebar-menu-container">
                 <Menu
                     mode="inline"
-                    theme="dark"
+                    theme="dark" // Using dark theme prop, but overrides in CSS handle actual colors
                     selectedKeys={[getSelectedKey()]}
                     openKeys={collapsed ? [] : openKeys}
                     onOpenChange={handleOpenChange}
@@ -175,6 +164,65 @@ const Sidebar = ({ collapsed, onCollapse }) => {
                     </div>
                 )}
             </div>
+        </>
+    );
+};
+
+const Sidebar = ({ collapsed, onCollapse, mobileOpen, onMobileClose }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [openKeys, setOpenKeys] = useState(['departments']);
+    const screens = useBreakpoint();
+    const { isDark } = useTheme();
+
+    // Check if we are on a mobile screen
+    const isMobile = !screens.lg;
+
+    if (isMobile) {
+        return (
+            <Drawer
+                placement="left"
+                onClose={onMobileClose}
+                open={mobileOpen}
+                width={260}
+                className={`mobile-sidebar-drawer ${isDark ? 'theme-dark' : 'theme-light'}`}
+                styles={{ body: { padding: 0 } }}
+                closeIcon={null}
+            >
+                <div className="app-sidebar" style={{ position: 'relative', height: '100%', width: '100%' }}>
+                    <SidebarContent
+                        collapsed={false}
+                        navigate={(path) => {
+                            navigate(path);
+                            onMobileClose();
+                        }}
+                        location={location}
+                        openKeys={openKeys}
+                        setOpenKeys={setOpenKeys}
+                    />
+                </div>
+            </Drawer>
+        );
+    }
+
+    return (
+        <Sider
+            className="app-sidebar"
+            collapsible
+            collapsed={collapsed}
+            onCollapse={onCollapse}
+            breakpoint="lg"
+            collapsedWidth={80}
+            width={260}
+            trigger={null}
+        >
+            <SidebarContent
+                collapsed={collapsed}
+                navigate={navigate}
+                location={location}
+                openKeys={openKeys}
+                setOpenKeys={setOpenKeys}
+            />
         </Sider>
     );
 };

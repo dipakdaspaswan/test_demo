@@ -1,0 +1,407 @@
+.teams-page {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.teams-logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #5059C9, #7B83EB);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(80, 89, 201, 0.3);
+}
+
+.teams-logo svg {
+    width: 28px;
+    height: 28px;
+}
+
+.page-title {
+    margin-bottom: 4px !important;
+}
+
+.teams-title {
+    background: linear-gradient(135deg, #5059C9 0%, #7B83EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.teams-search .ant-input-affix-wrapper {
+    border-radius: 20px !important;
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-bottom: 24px;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+}
+
+.action-card.meet {
+    border-left: 4px solid #5059C9;
+}
+
+.action-card.new-team {
+    border-left: 4px solid #7FBA00;
+}
+
+.action-card.schedule {
+    border-left: 4px solid #FFB900;
+}
+
+.action-icon {
+    font-size: 28px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.action-card.meet .action-icon {
+    color: #5059C9;
+    background: rgba(80, 89, 201, 0.1);
+}
+
+.action-card.new-team .action-icon {
+    color: #7FBA00;
+    background: rgba(127, 186, 0, 0.1);
+}
+
+.action-card.schedule .action-icon {
+    color: #FFB900;
+    background: rgba(255, 185, 0, 0.1);
+}
+
+/* Main Card */
+.main-card {
+    border-radius: 16px !important;
+}
+
+/* Teams Tabs */
+.teams-tabs .ant-tabs-tab {
+    padding: 12px 16px !important;
+    font-weight: 500;
+}
+
+.teams-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #5059C9 !important;
+}
+
+.teams-tabs .ant-tabs-ink-bar {
+    background: #5059C9 !important;
+}
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.team-card {
+    border-radius: 12px !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+
+.team-card:hover {
+    transform: translateY(-2px);
+}
+
+.team-card.selected {
+    border-color: #5059C9 !important;
+    box-shadow: 0 0 0 2px rgba(80, 89, 201, 0.2);
+}
+
+.team-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.team-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.team-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.team-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.team-desc {
+    font-size: 13px;
+    display: block;
+}
+
+.team-channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.channel-tag {
+    font-size: 11px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.team-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.member-count,
+.last-activity {
+    font-size: 12px;
+}
+
+/* Chat Section */
+.chat-section {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.chat-item:hover {
+    background: rgba(80, 89, 201, 0.05);
+}
+
+.chat-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.chat-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chat-time {
+    font-size: 11px;
+}
+
+.chat-message-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-message {
+    font-size: 13px;
+    max-width: 200px;
+}
+
+/* Calendar Section */
+.meetings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.meetings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.meeting-card {
+    border-radius: 10px !important;
+    border-left: 4px solid #5059C9;
+}
+
+.meeting-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.meeting-time {
+    text-align: center;
+    padding-right: 16px;
+}
+
+.meeting-time .time {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5059C9;
+}
+
+.meeting-info {
+    flex: 1;
+}
+
+.meeting-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* Calls Section */
+.call-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.call-action-card {
+    text-align: center;
+    padding: 24px !important;
+    border-radius: 12px !important;
+}
+
+.call-action-card:hover {
+    transform: translateY(-2px);
+}
+
+.call-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.call-icon.video {
+    color: #5059C9;
+}
+
+.call-icon.audio {
+    color: #7FBA00;
+}
+
+.call-icon.schedule {
+    color: #FFB900;
+}
+
+.quick-dial-list {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+.quick-dial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-name {
+    font-size: 13px;
+}
+
+/* Files Section */
+.files-section {
+    padding: 40px;
+}
+
+.files-empty {
+    text-align: center;
+    padding: 60px;
+}
+
+.files-icon {
+    font-size: 64px;
+    color: #5059C9;
+    margin-bottom: 16px;
+}
+
+/* Modal Styling */
+.teams-modal .ant-modal-content {
+    border-radius: 12px;
+}
+
+.call-modal-content,
+.meeting-modal-content {
+    padding: 16px 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .page-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .call-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-dial-list {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-actions .ant-col {
+        width: 100%;
+    }
+}

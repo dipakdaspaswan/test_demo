@@ -11,7 +11,6 @@
 }
 
 .page-title {
-    color: #fff !important;
     margin-bottom: 8px !important;
     display: flex;
     align-items: center;
@@ -20,53 +19,20 @@
 
 .title-icon {
     font-size: 28px !important;
-    color: #6366f1;
 }
 
-.gradient-text {
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.gradient-text-finance {
-    background: linear-gradient(135deg, #10b981 0%, #6366f1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.gradient-text-cs {
-    background: linear-gradient(135deg, #ec4899 0%, #6366f1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.gradient-text-it {
-    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Stats Cards */
+/* Stats Row */
 .stats-row {
     margin-bottom: 24px;
 }
 
 .stat-card {
-    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 16px !important;
     transition: all 0.3s ease !important;
 }
 
 .stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(99, 102, 241, 0.3) !important;
 }
 
 .stat-card .ant-card-body {
@@ -85,14 +51,11 @@
 }
 
 .stat-card .ant-statistic-title {
-    color: rgba(255, 255, 255, 0.6) !important;
     font-size: 13px;
 }
 
 /* Main Card */
 .main-card {
-    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 16px !important;
 }
 
@@ -102,70 +65,43 @@
 
 /* Side Card */
 .side-card {
-    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 16px !important;
+    height: fit-content;
 }
 
 .side-card .ant-card-head {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
 }
 
 .side-card .ant-card-head-title {
-    color: #fff;
     font-weight: 600;
 }
 
-/* Department Tabs */
+.side-card .ant-card-body {
+    padding: 16px;
+}
+
+/* Tabs */
 .department-tabs .ant-tabs-tab {
-    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 16px !important;
+    font-weight: 500;
 }
 
-.department-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
-    color: #818cf8 !important;
-}
-
-.department-tabs .ant-tabs-ink-bar {
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-}
-
-/* Department Table */
+/* Table Styles */
 .department-table .ant-table {
     background: transparent !important;
 }
 
 .department-table .ant-table-thead>tr>th {
-    background: rgba(99, 102, 241, 0.1) !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     font-weight: 600;
 }
 
 .department-table .ant-table-tbody>tr>td {
     background: transparent !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.department-table .ant-table-tbody>tr:hover>td {
-    background: rgba(99, 102, 241, 0.08) !important;
-}
-
-.department-table .ant-pagination {
-    margin-top: 16px;
-}
-
-.department-table .ant-pagination-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.department-table .ant-pagination-item a {
-    color: rgba(255, 255, 255, 0.85);
 }
 
 .department-table .ant-pagination-item-active {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #5059C9, #6366f1);
     border: none;
 }
 
@@ -173,114 +109,138 @@
     color: #fff;
 }
 
-/* Activity List */
+/* Activity Section */
+.activity-section {
+    margin-top: 12px;
+}
+
 .activity-item {
     padding: 12px 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 .activity-item:last-child {
     border-bottom: none !important;
 }
 
-/* Empty State */
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.empty-state h4 {
-    color: #fff !important;
-    margin-top: 16px !important;
-    margin-bottom: 8px !important;
-}
-
-/* Systems Grid (IT Page) */
-.systems-grid {
+/* Stats Grid */
+.stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
-.system-card {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 12px !important;
+.stat-item {
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.system-card .ant-card-body {
-    padding: 16px !important;
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
 }
 
-.system-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+.stat-label {
+    font-size: 12px;
 }
 
-.system-stats {
-    display: flex;
-    flex-direction: column;
+/* Ticket/Request Items */
+.ticket-item,
+.request-item,
+.feedback-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.ticket-item:hover,
+.request-item:hover,
+.feedback-item:hover {
+    transform: translateX(4px);
+}
+
+/* Status Dot */
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.status-dot.operational {
+    background: #10b981;
+}
+
+.status-dot.warning {
+    background: #f59e0b;
+}
+
+.status-dot.critical {
+    background: #ef4444;
+}
+
+/* System Status Grid */
+.system-status-grid {
+    display: grid;
     gap: 12px;
 }
 
-.system-stat {
+.system-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.system-stat .ant-progress {
-    width: 60%;
+    padding: 12px;
+    border-radius: 8px;
 }
 
 /* Modal Styling */
 .department-modal .ant-modal-content {
-    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
 }
 
 .department-modal .ant-modal-header {
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.department-modal .ant-modal-title {
-    color: #fff;
-}
-
-.department-modal .ant-modal-close-x {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.department-modal .ant-form-item-label>label {
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.department-modal .ant-input,
-.department-modal .ant-select-selector,
-.department-modal .ant-picker {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    color: #fff !important;
-}
-
-.department-modal .ant-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.department-modal .ant-select-selection-placeholder {
-    color: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 16px 16px 0 0;
 }
 
 .department-modal .ant-modal-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 24px;
+}
+
+/* Knowledge Base Grid */
+.kb-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.kb-item {
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.kb-item:hover {
+    transform: translateY(-2px);
+}
+
+.kb-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.kb-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.kb-count {
+    font-size: 12px;
 }
 
 /* Responsive */
@@ -289,10 +249,12 @@
         flex-direction: column;
         gap: 16px;
     }
-}
 
-@media (max-width: 576px) {
-    .systems-grid {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kb-grid {
         grid-template-columns: 1fr;
     }
 }
