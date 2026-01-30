@@ -64,6 +64,10 @@ const HeaderBar = ({ collapsed, onToggle }) => {
                     className="toggle-btn"
                 />
 
+                <div className="header-logo">
+                    <img src="/amlak-logo.svg" alt="Amlak Logo" />
+                </div>
+
                 <div className="header-search">
                     <Input
                         prefix={<SearchOutlined />}

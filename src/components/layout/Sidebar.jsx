@@ -80,12 +80,7 @@ const SidebarContent = ({ collapsed, navigate, location, openKeys, setOpenKeys }
         },
         {
             type: 'divider',
-        },
-        {
-            key: 'settings',
-            icon: <SettingOutlined />,
-            label: 'Settings',
-        },
+        }
     ];
 
     const handleMenuClick = ({ key }) => {

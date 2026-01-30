@@ -31,6 +31,18 @@
     font-size: 18px;
 }
 
+.header-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.header-logo img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
 .header-search {
     position: relative;
 }
